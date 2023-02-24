@@ -5,11 +5,19 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import './style.css';
 import Pedido from './pedido';
 import Card from './card';
+import Feedback from './feedback';
 
 const App = () => {
-  const date = new Date();
 
+  const date = new Date();
+  const textOk = "Já chegou";
+  const textNot = "Ainda não chegou";
+
+  const functionOk = () => { alert('Agradecemos a confirmação!') };
+  const functionNot = () => { alert('Vamos verificar!') };
+  const contentFeedBack = <Feedback textOk={textOk} textNot={textNot} functionOk={functionOk} functionNot={functionNot} />
   return (
+
     <div className='container border rounded mt-2'>
 
       <div className='row'>
@@ -28,6 +36,7 @@ const App = () => {
               title="SSD"
               description="SSD Kingston"
             />
+            {contentFeedBack}
           </Card>
 
         </div>
@@ -40,6 +49,7 @@ const App = () => {
               title="Notebook"
               description="Notebook Lenovo E-14"
             />
+            {contentFeedBack}
           </Card>
 
         </div>
@@ -52,6 +62,7 @@ const App = () => {
               title="Video Game"
               description="X-BOX One"
             />
+            {contentFeedBack}
           </Card>
 
         </div>
